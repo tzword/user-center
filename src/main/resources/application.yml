@@ -10,8 +10,12 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+        cluster-name: BJ
+        namespace: 68dc03c0-048d-48c4-81e3-b7d1b34556e5
+        metadata:
+          version: v1
 
   application:
     name: user-center
 server:
-  port: 8008
+  port: 8002
