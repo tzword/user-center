@@ -3,10 +3,7 @@ package com.tzword.usercenter.controller;
 import com.tzword.usercenter.dao.user.UserMapper;
 import com.tzword.usercenter.domain.entity.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,13 @@ public class TestController {
         List<User> users = userMapper.selectAll();
         System.out.println(users.toString());
         return users;
+    }
+
+    @GetMapping("getUser/{id}")
+    public User getUser(@PathVariable Integer id){
+        User user = new User();
+        user.setId(id);
+        return userMapper.selectOne(user);
     }
 
     @PostMapping("getUserByPost")
