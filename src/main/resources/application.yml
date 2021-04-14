@@ -14,6 +14,16 @@ spring:
         namespace: 68dc03c0-048d-48c4-81e3-b7d1b34556e5
         metadata:
           version: v1
+    stream:
+      rocketmq:
+        binder:
+          name-server: 127.0.0.1:9876
+      bindings:
+        input:
+          # 用来指定topic,跟生产端一样
+          destination: stream-test-topic
+          # 如果是RocketMQ,一定要设置，其他的mq可以留空
+          group: binder-group
 
   application:
     name: user-center
