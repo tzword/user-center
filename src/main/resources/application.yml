@@ -24,6 +24,10 @@ spring:
           destination: stream-test-topic
           # 如果是RocketMQ,一定要设置，其他的mq可以留空
           group: binder-group
+        my-input:
+          destination: stream-my-topic
+          # 如果是RocketMQ,一定要设置，其他的mq可以留空
+          group: my-group
 
   application:
     name: user-center
