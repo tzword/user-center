@@ -1,6 +1,6 @@
 package com.tzword.usercenter;
 
-import com.tzword.usercenter.rocketmq.MySink;
+//import com.tzword.usercenter.rocketmq.MySink;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -9,7 +9,8 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 @MapperScan("com.tzword.usercenter.dao.user")
 @SpringBootApplication
-@EnableBinding({Sink.class, MySink.class})
+//@EnableBinding({Sink.class, MySink.class})
+@EnableBinding(Sink.class)
 public class UserCenterApplication {
 
     public static void main(String[] args) {
