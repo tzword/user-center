@@ -1,6 +1,6 @@
 package com.tzword.usercenter.annotation;
 
-import com.tzword.usercenter.exception.SecurityException;
+import com.tzword.usercenter.exception.MySecurityException;
 import com.tzword.usercenter.util.JwtOperator;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -50,12 +50,12 @@ public class CheckAspect {
             Boolean aBoolean = jwtOperator.validateToken(token);
             if (!aBoolean){
                 log.error("token认证失败");
-                throw new SecurityException();
+                throw new MySecurityException();
             }
             //joinPoint.process指得是调用原方法
             return joinPoint.proceed();
         } catch (Throwable throwable) {
-            throw new SecurityException();
+            throw new MySecurityException();
         }
     }
 

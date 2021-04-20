@@ -5,5 +5,5 @@ package com.tzword.usercenter.exception;
  * @Description:
  * @date 2021/4/20 11:09
  */
-public class SecurityException extends RuntimeException{
+public class MySecurityException extends RuntimeException{
 }

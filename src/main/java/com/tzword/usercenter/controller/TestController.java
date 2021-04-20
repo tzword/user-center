@@ -51,6 +51,7 @@ public class TestController {
     }
 
     @GetMapping("getUserByGet")
+    @CheckLogin
     public List<User> getUserByGet(User user){
         List<User> users = userMapper.select(user);
         System.out.println(users.toString());
