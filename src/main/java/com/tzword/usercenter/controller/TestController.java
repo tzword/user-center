@@ -1,5 +1,6 @@
 package com.tzword.usercenter.controller;
 
+import com.tzword.usercenter.annotation.CheckLogin;
 import com.tzword.usercenter.dao.user.UserMapper;
 import com.tzword.usercenter.domain.entity.user.User;
 import com.tzword.usercenter.util.JwtOperator;
@@ -28,6 +29,7 @@ public class TestController {
 
 
     @RequestMapping("helloword")
+    @CheckLogin
     public List<User> printHello(){
         List<User> users = userMapper.selectAll();
         System.out.println(users.toString());
