@@ -37,6 +37,7 @@ public class TestController {
     }
 
     @GetMapping("getUser/{id}")
+    @CheckLogin
     public User getUser(@PathVariable Integer id){
         User user = new User();
         user.setId(id);
@@ -70,9 +71,9 @@ public class TestController {
     public Map<String, Object> login(){
         //微信小程序服务端校验是否登录
         Map<String,Object> map = new HashMap<>();
-        map.put("aaa","111");
-        map.put("bbb","222");
-        map.put("ccc","333");
+        map.put("id","111");
+        map.put("name","张三");
+        map.put("role","admin");
         String token = jwtOperator.generateToken(map);
         log.info("生成的token：{}，有效期是：{}",token,jwtOperator.getExpirationDateFromToken(token));
         Map<String,Object> map2 = new HashMap<>();

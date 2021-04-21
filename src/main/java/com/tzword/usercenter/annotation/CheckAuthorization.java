@@ -8,9 +8,10 @@ import java.lang.annotation.Target;
 /**
  * @author jianghy
  * @Description:
- * @date 2021/4/19 20:31
+ * @date 2021/4/21 10:07
  */
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface CheckLogin {
+public @interface CheckAuthorization {
+    String value();
 }
