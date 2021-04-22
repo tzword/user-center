@@ -32,6 +32,12 @@ spring:
 
   application:
     name: user-center
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+  sleuth:
+    sampler:
+      #抽样率：默认是0.1，表示90%的数据都会丢弃，这里我们测试方便用了1.0
+      probability: 1.0
 server:
   port: 8002
 #rocketmq:
@@ -41,3 +47,6 @@ jwt:
   secret: aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnnooopppqqqrrrsssttt
   # 有效期，单位秒，默认2周
   expire-time-in-second: 1209600
+logging:
+  level:
+    org.springframework.cloud.sleuth: debug
