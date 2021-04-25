@@ -3,17 +3,17 @@ spring:
     url: jdbc:mysql://localhost:3306/user_center?useSSL=false&serverTimezone=UTC
     hikari:
       username: root
-      password: 1323!Q@#EMSD%$^
+      password: 123456
       driver-class-name: com.mysql.cj.jdbc.Driver
 
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
-        cluster-name: BJ
-        namespace: 68dc03c0-048d-48c4-81e3-b7d1b34556e5
-        metadata:
-          version: v1
+#        cluster-name: BJ
+#        namespace: 68dc03c0-048d-48c4-81e3-b7d1b34556e5
+#        metadata:
+#          version: v1
     stream:
       rocketmq:
         binder:
@@ -50,3 +50,13 @@ jwt:
 logging:
   level:
     org.springframework.cloud.sleuth: debug
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
